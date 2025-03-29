@@ -7,26 +7,31 @@
 }
 
 body {
-    background-color: lightsalmon;
+    background-color: darkred;
 }
 
 /* HEADER */
 header {
+    background: url('../imagenes/nenes2.jpg') no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
+
 
 .fotoHeader {
     width: 20%;
+    opacity: 0;
 }
 
 /* NAV */
 nav {
     border-top: solid black 1px;
     border-bottom: solid black 1px;
-    width: 100%;
-    margin-bottom: 25px;
+    width: 103%;
+    margin-bottom: -20px;
     padding: 25px;
     background-color: white;
 }
@@ -70,12 +75,13 @@ nav ul li a:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección "TRANSPORT ACOSTA" */
+/* Sección "CENTRAL" */
 .mainSection h2 {
-    background-color: red; 
+    background-color: darkred; 
     color: white;
     padding: 15px; /* Espaciado interno */
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
     border-radius: 5px; /* Bordes ligeramente redondeados */
     margin-bottom: 20px; /* Más espacio debajo */
 }
@@ -88,7 +94,7 @@ nav ul li a:hover {
 
 /* Texto debajo de la imagen */
 .mainSection p {
-    background-color: black; /* Fondo negro */
+    background-color: darkred; /* Fondo negro */
     color: white; /* Letras blancas */
     padding: 15px; /* Espaciado interno */
     text-align: center;
@@ -116,7 +122,7 @@ nav ul li a:hover {
 }
 
 .apuntame:hover {
-    background-color: red;
+    background-color: darkred;
 }
 
 /* FOOTER */

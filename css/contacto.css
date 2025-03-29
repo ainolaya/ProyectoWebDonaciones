@@ -1,0 +1,93 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: darkred;
+    color: black;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    background-color: white; 
+    color: black;
+    padding: 15px; /* Espaciado interno */
+    text-align: center;
+    border-radius: 5px; 
+}
+.fotoHeader{
+    width: 35%;
+}
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+nav {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    width: 240%;
+    margin-bottom: -2px;
+    padding: 8px;
+    background-color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: lightcoral;
+}

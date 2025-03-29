@@ -1,0 +1,210 @@
+/* Estilos generales */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: url('../imagenes/nene3.jpg') no-repeat center center;
+    background-size: cover;
+    color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.fotoHeader {
+    width: 10%;
+}
+
+nav {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    width: 100%;
+    margin-bottom: -20px;
+    padding: 8px;
+    background-color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección de Servicios */
+.serviciosSection {
+    text-align: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.serviciosSection h2 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background-color: darkred;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: 93%;
+    margin-bottom: 30px;
+}
+
+/* Estilo para el contenedor de los servicios */
+.serviciosContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilos para los botones de donación */
+.btn-donar {
+    display: inline-block;
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-donar:hover {
+    background-color: darkred;
+}
+
+/* Estilo para cada subsección de servicio */
+.serviciosSection {
+    text-align: center;
+    max-width: 600px; /* Hacemos el cuadro más pequeño */
+    margin-left: auto; /* Mueve la sección completamente a la derecha */
+    margin-right: 20px; /* Añadimos un pequeño margen derecho */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.serviciosContainer {
+    .serviciosContainer {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espacio entre los botones */
+        margin-bottom: 20px; /* Espacio entre los botones y el botón de donar */
+    }
+    
+}
+
+/* Botones cuadrados */
+.btn-cuadrado {
+    width: 100px; /* Tamaño del cuadrado */
+    height: 100px; /* Tamaño del cuadrado */
+    background-color: darkred; /* Color de fondo */
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: larger;
+    color: white;
+}
+
+/* Efecto hover */
+.btn-cuadrado:hover {
+    background-color: lightcoral;
+}
+
+.btn-donar {
+    display: block;
+    margin: 20px auto;
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-donar:hover {
+    background-color: lightcoral;
+}
+
+.donativoBox {
+    position: absolute;
+    bottom: 110px;
+    left: 40px;
+    background-color: transparent; 
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    color: white;
+    text-align: left;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: black;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    padding: 20px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer ul li a:hover {
+    color: lightcoral;
+}
