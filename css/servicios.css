@@ -1,52 +1,41 @@
-/* Estilos generales */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background: url('../imagenes/nene3.jpg') no-repeat center center;
-    background-size: cover;
-    color: black;
+    font-family: Arial, sans-serif;
+    background-color: darkred;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     text-align: center;
 }
 
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
+/* ---------- HEADER ---------- */
 header {
+    background-color: white;
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: white;
-}
-
-.fotoHeader {
-    width: 10%;
+    padding: 20px;
 }
 
 nav {
     border-top: solid black 1px;
     border-bottom: solid black 1px;
     width: 100%;
-    margin-bottom: -20px;
-    padding: 8px;
+    margin-top: -20px;
+    padding: 25px;
     background-color: white;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 nav ul li a {
@@ -62,131 +51,101 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Estilos para la sección de Servicios */
-.serviciosSection {
-    text-align: center;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* ---------- GALERÍA ---------- */
+.galeria-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto 80px; /* más margen con footer */
+    overflow: hidden;
 }
 
-.serviciosSection h2 {
-    font-family: 'Arial Black', Arial, sans-serif;
-    background-color: darkred;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    width: 93%;
-    margin-bottom: 30px;
-}
-
-/* Estilo para el contenedor de los servicios */
-.serviciosContainer {
+.galeria {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    transition: transform 0.4s ease;
 }
 
-/* Estilos para los botones de donación */
-.btn-donar {
-    display: inline-block;
-    background-color: darkred;
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
     color: white;
     border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.izquierda {
+    left: 0;
+}
+
+.derecha {
+    right: 0;
+}
+
+.reserva {
+    margin-top: 15px;
+    position: relative;
+}
+
+.btn-fechas {
     padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-donar:hover {
-    background-color: darkred;
-}
-
-/* Estilo para cada subsección de servicio */
-.serviciosSection {
-    text-align: center;
-    max-width: 600px; /* Hacemos el cuadro más pequeño */
-    margin-left: auto; /* Mueve la sección completamente a la derecha */
-    margin-right: 20px; /* Añadimos un pequeño margen derecho */
-    padding: 20px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.serviciosContainer {
-    .serviciosContainer {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Espacio entre los botones */
-        margin-bottom: 20px; /* Espacio entre los botones y el botón de donar */
-    }
-    
-}
-
-/* Botones cuadrados */
-.btn-cuadrado {
-    width: 100px; /* Tamaño del cuadrado */
-    height: 100px; /* Tamaño del cuadrado */
-    background-color: darkred; /* Color de fondo */
+    color: darkred;
     border: none;
-    border-radius: 10px;
-    margin: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: larger;
-    color: white;
-}
-
-/* Efecto hover */
-.btn-cuadrado:hover {
-    background-color: lightcoral;
-}
-
-.btn-donar {
-    display: block;
-    margin: 20px auto;
-    background-color: darkred;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 18px;
     border-radius: 5px;
+    z-index: 2;
+}
+
+.menu-fechas {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.menu-fechas li {
+    padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
 }
 
-.btn-donar:hover {
-    background-color: lightcoral;
+.menu-fechas li:hover {
+    background-color: #eee;
 }
 
-.donativoBox {
-    position: fixed;
-    bottom: 120px;         /* Separa el cuadro del borde inferior */
-    left: 20px;           /* Separa el cuadro del borde izquierdo */
-    width: clamp(250px, 30vw, 400px); /* Se adapta entre 250px y 400px según el ancho de la ventana */
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.7); /* fondo transparente */
-    border-radius: 10px;
-    font-size: 16px;
-    color: black;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 1000; /* Asegura que esté encima de otros elementos */
+/* Mostrar solo el menú del botón activo */
+.reserva.active .menu-fechas {
+    display: block;
 }
 
-/* Estilos del footer */
+/* ---------- FOOTER ---------- */
 footer {
     background-color: black;
-    padding: 10px 0;
-    width: 100%;
+    padding: 20px;
 }
 
 footer ul {
@@ -194,10 +153,11 @@ footer ul {
     justify-content: center;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 footer ul li {
-    padding: 20px;
+    padding: 10px;
 }
 
 footer ul li a {
@@ -207,4 +167,69 @@ footer ul li a {
 
 footer ul li a:hover {
     color: lightcoral;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    .galeria-container {
+        max-width: 90%;
+        margin: 40px auto 100px;
+    }
+
+    .flecha {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+
+    .btn-fechas {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .menu-fechas {
+        top: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-fechas {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .menu-fechas {
+        top: 35px;
+        padding: 8px;
+    }
+
+    .slide img {
+        width: 100%;
+    }
+
+    .flecha {
+        font-size: 1.2em;
+    }
 }
