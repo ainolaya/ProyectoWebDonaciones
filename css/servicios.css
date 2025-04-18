@@ -1,14 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: darkred;
+/* RESET GLOBAL */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
+}
+
+body {
+    background-color: darkred;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ---------- HEADER ---------- */
 header {
-    background-color: white;
+    background: url('../imagenes/medicos.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -16,13 +24,20 @@ header {
     padding: 20px;
 }
 
+
+.fotoHeader {
+    width: 10%;
+    opacity: 0;
+}
+
+/* ---------- NAV ---------- */
 nav {
     border-top: solid black 1px;
     border-bottom: solid black 1px;
-    width: 100%;
-    margin-top: -20px;
+    width: 102%;
     padding: 25px;
     background-color: white;
+    margin-bottom: -20px;
 }
 
 nav ul {
@@ -30,8 +45,6 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 nav ul li {
@@ -51,11 +64,19 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* ---------- GALERÍA ---------- */
+/* ---------- MAIN (GALERÍA) ---------- */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
 .galeria-container {
     position: relative;
-    max-width: 800px;
-    margin: 50px auto 80px; /* más margen con footer */
+    max-width: 600px;
+    margin: auto;
     overflow: hidden;
 }
 
@@ -78,6 +99,7 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
+/* ---------- BOTONES Y MENÚ ---------- */
 .flecha {
     position: absolute;
     top: 50%;
@@ -101,8 +123,10 @@ nav ul li a:hover {
 
 .reserva {
     margin-top: 15px;
-    position: relative;
-}
+    position: relative; /* <- necesario para anclar el menú */
+    display: inline-block; /* para que se ajuste al botón */
+  }
+  
 
 .btn-fechas {
     padding: 10px 20px;
@@ -116,17 +140,17 @@ nav ul li a:hover {
 
 .menu-fechas {
     display: none;
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    position:relative;
+    top: 0;
+    left: 105%;
+    transform: none;
     background-color: white;
     border: 1px solid #ccc;
     list-style: none;
     padding: 10px;
     border-radius: 5px;
     z-index: 3;
-}
+  }
 
 .menu-fechas li {
     padding: 5px 10px;
@@ -137,7 +161,6 @@ nav ul li a:hover {
     background-color: #eee;
 }
 
-/* Mostrar solo el menú del botón activo */
 .reserva.active .menu-fechas {
     display: block;
 }
@@ -146,6 +169,7 @@ nav ul li a:hover {
 footer {
     background-color: black;
     padding: 20px;
+    width: 100%;
 }
 
 footer ul {
@@ -169,43 +193,23 @@ footer ul li a:hover {
     color: lightcoral;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    nav ul li {
-        padding: 10px 0;
-    }
-
     .galeria-container {
         max-width: 90%;
-        margin: 40px auto 100px;
     }
 
     .flecha {
         font-size: 1.5em;
-        padding: 8px;
-    }
-
-    .btn-fechas {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .menu-fechas {
-        top: 40px;
-        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 15px;
-    }
-
     nav {
         padding: 15px;
     }
@@ -223,10 +227,6 @@ footer ul li a:hover {
     .menu-fechas {
         top: 35px;
         padding: 8px;
-    }
-
-    .slide img {
-        width: 100%;
     }
 
     .flecha {
