@@ -1,17 +1,19 @@
-/* Estilos generales */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: darkred;
-    color: black;
+* {
     margin: 0;
     padding: 0;
-    text-align: justify;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
+body {
+    background-color: darkred;
+}
+
+/* ---------- HEADER ---------- */
 header {
-    background: url('../imagenes/nene2.jpg') no-repeat center center;
+    background: url('../imagenes/nenes2.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,12 +25,13 @@ header {
     opacity: 0;
 }
 
+/* ---------- NAV ---------- */
 nav {
     border-top: solid black 1px;
     border-bottom: solid black 1px;
-    width: 101.3%;
+    width: 103%;
     margin-bottom: -20px;
-    padding: 8px;
+    padding: 25px;
     background-color: white;
 }
 
@@ -36,7 +39,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding: 0;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -56,62 +59,62 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Estilos específicos para la sección Acerca de Nosotros */
-.acercaSection {
-    text-align: center;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
+/* ---------- ACERCA DE - 3 COLUMNAS ---------- */
+.acercaGrid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.columna {
     background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.columna:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.columna h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: darkred;
+}
+
+.columna img {
+    width: 100%;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
-/* Asegurar que el título esté arriba y centrado */
-.acercaSection h2 {
-    font-family: 'Arial Black', Arial, sans-serif;
-    background-color: darkred;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    display: block;  /* Asegura que ocupe todo el ancho */
-    width: 80%;  /* Ocupar todo el ancho disponible */
-    text-align: center;
-    margin: 0 auto 20px auto;
-}
-
-/* Centrar la imagen correctamente */
-.acercaSection img {
-    display: block;  /* Evita que quede en línea con el título */
-    margin: 0 auto 20px auto;  /* Centra la imagen y deja espacio abajo */
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Estilos del texto debajo de la imagen */
-.acercaSection p {
-    font-size: 18px;
+.columna p {
+    font-size: 1.1em;
     line-height: 1.6;
     color: black;
-    font-family: Arial;
 }
 
-/* Footer */
+/* ---------- FOOTER ---------- */
 footer {
     background-color: black;
-    padding: 10px 0;
+    padding: 20px;
 }
 
 footer ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    padding: 0;
+    flex-wrap: wrap;
 }
 
 footer ul li {
-    padding: 20px;
+    padding: 10px;
 }
 
 footer ul li a {
@@ -121,4 +124,17 @@ footer ul li a {
 
 footer ul li a:hover {
     color: lightcoral;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 900px) {
+    .acercaGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }

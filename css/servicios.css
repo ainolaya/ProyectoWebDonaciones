@@ -24,7 +24,6 @@ header {
     padding: 20px;
 }
 
-
 .fotoHeader {
     width: 10%;
     opacity: 0;
@@ -64,19 +63,51 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* ---------- MAIN (GALERÍA) ---------- */
-main {
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+main.contenedor-actividades {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px 0;
+    align-items: flex-start;
+    gap: 200px;
+    padding: 40px 60px;
+    flex-wrap: wrap;
 }
 
+/* ---------- CUADRO DE TEXTO IZQUIERDO ---------- */
+.info-actividades {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    text-align: left;
+}
+
+.info-actividades h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: darkred;
+}
+
+.info-actividades p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Estilo para la imagen del logo */
+.logo-pequeno {
+    max-width: 60%;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- GALERÍA ---------- */
 .galeria-container {
     position: relative;
     max-width: 600px;
-    margin: auto;
     overflow: hidden;
 }
 
@@ -123,42 +154,50 @@ main {
 
 .reserva {
     margin-top: 15px;
-    position: relative; /* <- necesario para anclar el menú */
-    display: inline-block; /* para que se ajuste al botón */
-  }
-  
+    position: relative;
+    display: inline-block;
+}
 
 .btn-fechas {
-    padding: 10px 20px;
+    padding: 16px 32px;
+    font-size: 1.2em;
     background-color: white;
-    color: darkred;
+    color: black;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     z-index: 2;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-fechas:hover {
+    background-color: lightcoral;
+    color: black;
 }
 
 .menu-fechas {
     display: none;
-    position:relative;
+    position: relative;
     top: 0;
     left: 105%;
-    transform: none;
     background-color: white;
-    border: 1px solid #ccc;
+    color: black;
+    border: 1px solid black;
     list-style: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     z-index: 3;
-  }
+}
 
 .menu-fechas li {
-    padding: 5px 10px;
+    padding: 8px 12px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .menu-fechas li:hover {
-    background-color: #eee;
+    background-color: lightcoral;
+    color: black;
 }
 
 .reserva.active .menu-fechas {
@@ -170,6 +209,7 @@ footer {
     background-color: black;
     padding: 20px;
     width: 100%;
+    margin-top: auto;
 }
 
 footer ul {
@@ -200,12 +240,30 @@ footer ul li a:hover {
         align-items: center;
     }
 
+    main.contenedor-actividades {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .info-actividades {
+        max-width: 90%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
     .galeria-container {
         max-width: 90%;
     }
 
     .flecha {
         font-size: 1.5em;
+    }
+
+    .menu-fechas {
+        left: auto;
+        right: 0;
+        top: 40px;
     }
 }
 
@@ -220,8 +278,8 @@ footer ul li a:hover {
     }
 
     .btn-fechas {
-        font-size: 13px;
-        padding: 6px 12px;
+        font-size: 14px;
+        padding: 10px 18px;
     }
 
     .menu-fechas {
