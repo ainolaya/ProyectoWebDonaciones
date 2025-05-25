@@ -23,31 +23,34 @@ header {
 }
 
 nav {
-    background-color: #f5f5f5;
-    padding: 15px 0;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    padding: 5px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 10px;
 }
 
 nav ul li a:hover {
-    background-color: black;
     color: white;
+    background-color: black;
     border-radius: 5px;
 }
 
@@ -62,40 +65,42 @@ main {
 
 /* Recuadro gris a la izquierda modificado */
 .info-box {
-    background-color: rgba(255, 255, 255, 0);
-    padding: 15px 60px;
-    margin-left: 80px;
+    background-color: rgba(255, 255, 255, 0); /* color claro para visibilidad */
+    padding: 25px 30px;
+    margin-left: 40px;
     border-radius: 12px;
-    display: inline-block;
-    width: auto;
-    box-shadow: none;
-    color: #333;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-    font-size: 2.8em;
-    line-height: 1.1;
-    vertical-align: top;
-    min-height: 0 !important;
-    height: auto !important;
+    width: 500px;             /* controlamos el ancho exacto */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 2em;
+    line-height: 1.4;
+    align-self: flex-start;   /* evita que se estire verticalmente */
     margin-bottom: 0;
 }
 
 .info-box:hover {
-    background-color: #f0f0f0; /* gris claro */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: darkred; /* gris claro */
+    box-shadow: none;
     cursor: pointer;
 }
 
 .info-box h1 {
-    font-size: 1em; /* título mucho más grande */
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 12px;
+}
+
+.info-separator {
+    border: none;
+    border-top: 4px solid #ccc;
+    width: 80%;
+    margin: 15px auto;
+    
 }
 
 .info-box p {
-    color: #444;
+    margin-bottom: 0;
+    text-align: center;
 }
-
 
 
 /* Contenido principal */
